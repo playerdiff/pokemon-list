@@ -1,0 +1,129 @@
+.pokemon-container {
+  font-family: 'Press Start 2P', cursive;
+  color: #333;
+  text-align: center;
+  padding: 0 10px; /* Adiciona algum espaçamento horizontal */
+}
+
+.pokemon-title {
+  font-size: 2rem;
+  margin: 20px;
+}
+
+.pokemon-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colunas por padrão */
+  gap: 20px; /* Espaçamento entre os itens */
+  justify-content: center;
+}
+
+.pokemon-item {
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.2s;
+  background-size: cover; /* Para garantir que o gradiente cubra todo o fundo */
+  text-align: center;
+}
+
+.pokemon-item img {
+  width: 100px;
+  height: 100px;
+}
+
+.pokemon-item:hover {
+  transform: scale(1.1);
+}
+
+.pokemon-item h2 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.pokemon-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pokemon-buttons .nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.pokemon-buttons .nav-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pokemon-buttons .nav-button.left {
+  border-radius: 4px 0 0 4px;
+}
+
+.pokemon-buttons .nav-button.right {
+  border-radius: 0 4px 4px 0;
+}
+
+.pokemon-buttons .nav-button svg {
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  text-align: left;
+  font-size: 14px;
+}
+
+/* Media queries para responsividade */
+@media (max-width: 1200px) {
+  .pokemon-list {
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas para telas menores */
+  }
+}
+
+@media (max-width: 900px) {
+  .pokemon-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas menores */
+  }
+}
+
+@media (max-width: 600px) {
+  .pokemon-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas menores */
+  }
+}
+
+@media (max-width: 400px) {
+  .pokemon-list {
+    grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
+  }
+
+  .pokemon-item img {
+    width: 80px; /* Reduz o tamanho da imagem para telas menores */
+    height: 80px;
+  }
+
+  .pokemon-item h2 {
+    font-size: 1rem; /* Reduz o tamanho da fonte para telas menores */
+  }
+
+  .pokemon-buttons .nav-button {
+    padding: 8px 16px; /* Reduz o tamanho do botão para telas menores */
+    font-size: 14px;
+  }
+}
